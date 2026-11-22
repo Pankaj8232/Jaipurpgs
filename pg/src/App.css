@@ -9093,22 +9093,49 @@ body {
     .footer {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 35px 25px;
-        padding: 50px 6% 30px;
+        justify-items: center;
+        text-align: center;
+        gap: 40px 25px;
+        padding: 50px 6% 35px;
     }
 
     .footer > div {
         flex: unset;
-        max-width: none;
         width: 100%;
+        max-width: 220px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer li {
+        width: 100%;
+    }
+
+    .footer li:first-child::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer li:not(:first-child):hover {
+        transform: translateY(-2px);
     }
 }
 
 @media (max-width: 480px) {
     .footer {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 30px 15px;
-        padding: 40px 5% 25px;
+        gap: 35px 15px;
+        padding: 45px 5% 30px;
+    }
+
+    .footer > div {
+        max-width: 180px;
     }
 
     .footer li {
@@ -9118,13 +9145,17 @@ body {
 
     .footer li:first-child {
         font-size: 16px;
-        margin-bottom: 18px;
+        margin-bottom: 20px;
     }
 }
 
 @media (max-width: 340px) {
     .footer {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 25px;
+    }
+
+    .footer > div {
+        max-width: 100%;
     }
 }
