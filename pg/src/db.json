@@ -1,0 +1,280 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Sunrise PG",
+      "location": "Jhotwara, Jaipur",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyCKzTy1FGlkol1jIcdC2DXzGUbJFfgpy7oKv3JlcUdA&s=10",
+      "smallimage1":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWdWwD4PI1IdcC_aMWwcElqxnmiW3Xyx0VSTynT5rlnw&s=10",
+      "smallimage2":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRovmNFZeEv-NX44STERZF3fIVD6DlPB8RW5AMSY6hxdQ&s=10",
+      "smallimage3":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUp70VRbABVX9zUw6jb699bEOn4XbrGTDUzTKEko0OHA&s=10",
+      "smallimage4":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj3AX7gBsuOrunUDWrV6k5OCBoCIhqEC4h5N1OoiJ1hQ&s=10",
+      "price": 8500,
+      "slug": "sunrise-pg",
+      "available": 4,
+      "quantity": 4,
+      "gender": "Boys",
+      "more": [
+        "washing machine",
+        "iron",
+        "tiffin service",
+        "cleaning"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Royal Residency PG",
+      "location": "Vaishali Nagar, Jaipur",
+      "price": 7500,
+      "slug": "royal-residency-pg",
+      "available": 6,
+      "quantity": 6,
+      "gender": "Girls",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7VftISZD6_d5ZlSX2Hh4OgZdhDMUnSMXIPTIrSgLRtg&s=10",
+       "smallimage1":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWdWwD4PI1IdcC_aMWwcElqxnmiW3Xyx0VSTynT5rlnw&s=10",
+      "smallimage2":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRovmNFZeEv-NX44STERZF3fIVD6DlPB8RW5AMSY6hxdQ&s=10",
+      "smallimage3":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUp70VRbABVX9zUw6jb699bEOn4XbrGTDUzTKEko0OHA&s=10",
+      "smallimage4":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj3AX7gBsuOrunUDWrV6k5OCBoCIhqEC4h5N1OoiJ1hQ&s=10",
+      "more": [
+        "washing machine",
+        "iron",
+        "tiffin service",
+        "cook"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Green View PG",
+      "location": "Mansarovar, Jaipur",
+      "price": 6500,
+      "slug": "green-view-pg",
+      "available": 8,
+      "quantity": 8,
+      "gender": "Boys",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfLjGxCWNAWhAkuDimNKIql3umic-_wxH7ekd4eTnSfA&s=10",
+      "smallimage1":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWdWwD4PI1IdcC_aMWwcElqxnmiW3Xyx0VSTynT5rlnw&s=10",
+      "smallimage2":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRovmNFZeEv-NX44STERZF3fIVD6DlPB8RW5AMSY6hxdQ&s=10",
+      "smallimage3":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUp70VRbABVX9zUw6jb699bEOn4XbrGTDUzTKEko0OHA&s=10",
+      "smallimage4":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj3AX7gBsuOrunUDWrV6k5OCBoCIhqEC4h5N1OoiJ1hQ&s=10",
+      "more": [
+        "washing machine",
+        "iron",
+        "tiffin service",
+        "helper"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Pink City Homes",
+      "location": "Gopalpura, Jaipur",
+      "price": 10000,
+      "slug": "pink-city-homes",
+      "available": 2,
+      "quantity": 2,
+      "gender": "Girls",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR12LZ6C4upbIRRJGrPg7YjwXrTRC56pCEIIyATOCNMVw&s=10",
+      "smallimage1":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWdWwD4PI1IdcC_aMWwcElqxnmiW3Xyx0VSTynT5rlnw&s=10",
+      "smallimage2":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRovmNFZeEv-NX44STERZF3fIVD6DlPB8RW5AMSY6hxdQ&s=10",
+      "smallimage3":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUp70VRbABVX9zUw6jb699bEOn4XbrGTDUzTKEko0OHA&s=10",
+      "smallimage4":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj3AX7gBsuOrunUDWrV6k5OCBoCIhqEC4h5N1OoiJ1hQ&s=10",
+      "more": [
+        "washing machine",
+        "iron",
+        "tiffin service",
+        "library"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Comfort Stay PG",
+      "location": "Gopalpura, Jaipur",
+      "price": 7000,
+      "slug": "comfort-stay-pg",
+      "available": 5,
+      "quantity": 5,
+      "gender": "Boys",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRxpGy_xCcrNMHqzjpwPjveP5timp9TdJMFtu3XNM4UQ&s=10",
+      "smallimage1":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWdWwD4PI1IdcC_aMWwcElqxnmiW3Xyx0VSTynT5rlnw&s=10",
+      "smallimage2":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRovmNFZeEv-NX44STERZF3fIVD6DlPB8RW5AMSY6hxdQ&s=10",
+      "smallimage3":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUp70VRbABVX9zUw6jb699bEOn4XbrGTDUzTKEko0OHA&s=10",
+      "smallimage4":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj3AX7gBsuOrunUDWrV6k5OCBoCIhqEC4h5N1OoiJ1hQ&s=10",
+      "more": [
+        "washing machine",
+        "iron",
+        "tiffin service",
+        "park"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "City Heart PG",
+      "location": "Vaishali, Jaipur",
+      "price": 6000,
+      "slug": "city-heart-pg",
+      "available": 10,
+      "quantity": 10,
+      "gender": "Girls",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNcv-WMtKIm8piJSXkNQ8HL-PdDf7o3Ul3aA2TMAYTsQ&s=10",
+     "smallimage1":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWdWwD4PI1IdcC_aMWwcElqxnmiW3Xyx0VSTynT5rlnw&s=10",
+      "smallimage2":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRovmNFZeEv-NX44STERZF3fIVD6DlPB8RW5AMSY6hxdQ&s=10",
+      "smallimage3":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUp70VRbABVX9zUw6jb699bEOn4XbrGTDUzTKEko0OHA&s=10",
+      "smallimage4":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj3AX7gBsuOrunUDWrV6k5OCBoCIhqEC4h5N1OoiJ1hQ&s=10",
+      "more": [
+        "washing machine",
+        "iron",
+        "tiffin service"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Elite Living PG",
+      "location": "Mansarovar, Jaipur",
+      "price": 9000,
+      "slug": "elite-living-pg",
+      "available": 3,
+      "quantity": 3,
+      "gender": "Boys",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlKJDkF-__L0ZT_SGsqhpFDDiy6T2RgJc6loz-WV_qRw&s=10",
+      "smallimage1":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWdWwD4PI1IdcC_aMWwcElqxnmiW3Xyx0VSTynT5rlnw&s=10",
+      "smallimage2":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRovmNFZeEv-NX44STERZF3fIVD6DlPB8RW5AMSY6hxdQ&s=10",
+      "smallimage3":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUp70VRbABVX9zUw6jb699bEOn4XbrGTDUzTKEko0OHA&s=10",
+      "smallimage4":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj3AX7gBsuOrunUDWrV6k5OCBoCIhqEC4h5N1OoiJ1hQ&s=10",
+      "more": [
+        "washing machine",
+        "iron",
+        "tiffin service",
+        "tea"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Happy Homes PG",
+      "location": "Jhotwara, Jaipur",
+      "price": 5500,
+      "slug": "happy-homes-pg",
+      "available": 7,
+      "quantity": 7,
+      "gender": "Girls",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRcA0Q792VuQV5USNHlTUwA8eWoaEnUMD7qwUcX22txw&s=10",
+      "smallimage1":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWdWwD4PI1IdcC_aMWwcElqxnmiW3Xyx0VSTynT5rlnw&s=10",
+      "smallimage2":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRovmNFZeEv-NX44STERZF3fIVD6DlPB8RW5AMSY6hxdQ&s=10",
+      "smallimage3":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUp70VRbABVX9zUw6jb699bEOn4XbrGTDUzTKEko0OHA&s=10",
+      "smallimage4":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj3AX7gBsuOrunUDWrV6k5OCBoCIhqEC4h5N1OoiJ1hQ&s=10",
+      "more": [
+        "washing machine",
+        "iron",
+        "tiffin service"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Comfort Nest PG",
+      "location": "Mansarovar, Jaipur",
+      "price": 7200,
+      "slug": "comfort-nest-pg",
+      "available": 6,
+      "quantity": 6,
+      "gender": "Boys",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN-RvGcMD8bR7w9A2LIFkVOirLr8i58ijJiJCfjZ6o4A&s=10",
+      "smallimage1":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWdWwD4PI1IdcC_aMWwcElqxnmiW3Xyx0VSTynT5rlnw&s=10",
+      "smallimage2":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRovmNFZeEv-NX44STERZF3fIVD6DlPB8RW5AMSY6hxdQ&s=10",
+      "smallimage3":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUp70VRbABVX9zUw6jb699bEOn4XbrGTDUzTKEko0OHA&s=10",
+      "smallimage4":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj3AX7gBsuOrunUDWrV6k5OCBoCIhqEC4h5N1OoiJ1hQ&s=10",
+      "more": [
+        "washing machine",
+        "iron",
+        "tiffin service",
+        "maid"
+      ]
+    }
+  ],
+  "login": [
+    {
+      "name": "Pankaj Goswami",
+      "email": "goswamipankaj13044@gmail.com",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4tZkvDxdLnC8oB5ZHreyN5eUIxnlydoCrg1gNcGSlHw&s=10",
+      "city": "Churu",
+      "state": "Rajasthan",
+      "pincode": "222222",
+      "password": "pankaj@123",
+      "id": "CC475KsFgxU"
+    },
+    {
+      "name": "neeraj",
+      "email": "neeraj@123gmail.com",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwZJEIWTebD-NQ_8PZ2ENd4QBTaKrigcn_jPrlyrIfYA&s=10",
+      "password": "neeraj@123",
+      "city": "jobner",
+      "state": "Rajasthan",
+      "pincode": "303317",
+      "id": "R0Il33CX7Z8"
+    }
+  ],
+  "admindata": [
+    {
+      "name": "pankaj",
+      "email": "pankaj@123gmail.com",
+      "phone": "6785939549",
+      "password": "pankaj@123",
+      "city": "churu",
+      "state": "rajsthan",
+      "id": "bd56wtp-uEk",
+      "role": "admin"
+    },
+    {
+      "name": "neeraj",
+      "email": "neeraj@123gmail.com",
+      "phone": "8905509313",
+      "password": "neeraj@123",
+      "city": "jobner",
+      "state": "Rajasthan",
+      "role": "subadmin",
+      "id": "l_I8zQ5QgfE"
+    }
+  ],
+  "booking": [
+    {
+      "name": "Sunrise PG",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyCKzTy1FGlkol1jIcdC2DXzGUbJFfgpy7oKv3JlcUdA&s=10",
+      "location": "Jhotwara, Jaipur",
+      "gender": "Boys",
+      "available": 4,
+      "price": 8500,
+      "quantity": 1,
+      "userId": "CC475KsFgxU",
+      "utr": "1234567890",
+      "paymentStatus": "Pending Verification",
+      "id": "otVCmubSN5Y"
+    },
+    {
+      "name": "Royal Residency PG",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7VftISZD6_d5ZlSX2Hh4OgZdhDMUnSMXIPTIrSgLRtg&s=10",
+      "location": "Vaishali Nagar, Jaipur",
+      "gender": "Girls",
+      "available": 6,
+      "price": 7500,
+      "quantity": 1,
+      "userId": "R0Il33CX7Z8",
+      "utr": "1234567890",
+      "paymentStatus": "Pending Verification",
+      "id": "Ht4xADffs3I"
+    }
+  ],
+  "enquiry": [
+    {
+      "name": "pankaj",
+      "email": "goswamipankaj13044@gmail.com",
+      "message": "just testing it",
+      "id": "cnFE7r0iWT0",
+      "reply": "we will connect you\n"
+    },
+    {
+      "name": "neeraj",
+      "email": "neeraj@123gmail.com",
+      "message": "how to find pg",
+      "id": "_jtpjtT0zQ0",
+      "reply": "hi neeraj\n"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
