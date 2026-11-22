@@ -9085,3 +9085,46 @@ body {
         white-space: nowrap;
     }
 }
+
+
+
+/* Footer responsive adjustment */
+@media (max-width: 768px) {
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px 25px;
+        padding: 50px 6% 30px;
+    }
+
+    .footer > div {
+        flex: unset;
+        max-width: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 15px;
+        padding: 40px 5% 25px;
+    }
+
+    .footer li {
+        font-size: 13px;
+        margin-bottom: 13px;
+    }
+
+    .footer li:first-child {
+        font-size: 16px;
+        margin-bottom: 18px;
+    }
+}
+
+@media (max-width: 340px) {
+    .footer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
