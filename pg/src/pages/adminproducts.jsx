@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -46,21 +47,22 @@ function Adminproducts() {
   }
 
   async function Deleteproduct(id) {
-    if (id === "") {
-      toast.error("Please select product for delete");
+    if (!id) {
+      toast.error("Product ID not found");
     } else {
       let confirmdelete = window.confirm("Are you sure to delete?");
 
       if (confirmdelete) {
-        let apilink = await fetch(`http://localhost:3000/products/${id}`, {
+        let apilink = await fetch(`http://localhost:5000/Deleteproducts/${id}`, {
           method: "DELETE",
         });
 
         if (apilink.ok) {
           toast.success("Product deleted successfully");
           setid("");
-          Getapi();
-          Getdeleteproduct();
+          openpopup2(false);
+          await Getapi();
+          await Getdeleteproduct();
         } else {
           toast.error("Product not deleted");
         }
@@ -148,7 +150,7 @@ function Adminproducts() {
   }
 
   function Openeditpopup(ele) {
-    setid(ele.id);
+    setid(ele._id);
 
     seteditname(ele.name);
     seteditlocation(ele.location);
@@ -203,7 +205,7 @@ function Adminproducts() {
         more: editmore,
       };
 
-      const apilink = await fetch(`http://localhost:3000/products/${id}`, {
+      const apilink = await fetch(`http://localhost:5000/editproducts/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -259,7 +261,7 @@ function Adminproducts() {
                 filteredproducts.map((ele) => (
                   <div
                     className="adminproductsearchresult"
-                    key={ele.id}
+                    key={ele._id}
                     onClick={() => {
                       Popup2(ele);
                       setsearch("");
@@ -383,7 +385,7 @@ function Adminproducts() {
 
           <tbody>
             {products.map((ele) => (
-              <tr key={ele.id}>
+              <tr key={ele._id}>
                 <td>{ele.name}</td>
 
                 <td>{ele.location}</td>
@@ -406,7 +408,7 @@ function Adminproducts() {
                 <td>
                   <button
                     className="deleteproductbutton"
-                    onClick={() => Deleteproduct(ele.id)}
+                    onClick={() => Deleteproduct(ele._id)}
                   >
                     Delete Product
                   </button>
@@ -578,12 +580,13 @@ function Adminproducts() {
               <span>Facilities</span>
               <p>{selectedproduct.more}</p>
             </div>
-             <button
-                    className="deleteproductbutton2"
-                    onClick={(ele) => Deleteproduct(ele.id)}
-                  >
-                    Delete Product
-                  </button>
+
+            <button
+              className="deleteproductbutton2"
+              onClick={() => Deleteproduct(selectedproduct._id)}
+            >
+              Delete Product
+            </button>
           </div>
         </div>
       )}

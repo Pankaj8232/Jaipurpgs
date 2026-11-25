@@ -116,7 +116,7 @@ function Profile() {
         image: editimage,
       };
 
-      let apilink = await fetch(`http://localhost:3000/login/${id}`, {
+      let apilink = await fetch(`http://localhost:5000/editprofile/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -235,7 +235,7 @@ function Profile() {
               ) : (
                 myenquiries.map(function (enquiry) {
                   return (
-                    <div className="myenquirycard" key={enquiry.id}>
+                    <div className="myenquirycard" key={enquiry._id}>
                       <h3>Your Enquiry</h3>
                       <p>{enquiry.message}</p>
 

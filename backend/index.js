@@ -152,6 +152,148 @@ myserver.get("/booking", async(req,res)=>{
 
 
 
+
+
+
+
+myserver.delete("/deleteproducts/:id", async(req,res)=>{
+    const id = req.params.id;
+
+    const deleteproduct = await Products.findByIdAndDelete(id);
+
+    if(deleteproduct){
+        res.status(200).json({
+            message:"Product deleted successfully"
+        });
+    }else{
+        res.status(404).json({
+            message:"Product not found"
+        });
+    }
+});
+
+
+myserver.delete("/enquiryproducts/:id", async(req,res)=>{
+    const id = req.params.id;
+
+    const deleteenquiry = await Enquiry.findByIdAndDelete(id);
+    if(deleteenquiry){
+        res.status(200).json({
+            message:"Enquiry deleted successfully"
+        });
+    }else{
+        res.status(404).json({
+            message:"Try again"
+        });
+    }
+});
+
+
+
+
+
+myserver.delete("/deletelogin/:id", async(req,res)=>{
+    const id = req.params.id;
+
+    const deletelogin = await Login.findByIdAndDelete(id);
+    if(deletelogin){
+        res.status(200).json({
+            message:"User deleted successfully"
+        });
+    }else{
+        res.status(404).json({
+            message:"Try again"
+        });
+    }
+});
+
+
+myserver.delete("/deleteadmin/:id", async(req,res)=>{
+    const id = req.params.id;
+
+    const deleteadmin = await Admin.findByIdAndDelete(id);
+    if(deleteadmin){
+        res.status(200).json({
+            message:"Admin deleted successfully"
+        });
+    }else{
+        res.status(404).json({
+            message:"Try again"
+        });
+    }
+});
+
+
+
+myserver.patch("/editenquiry/:id",async(req,res)=>{
+    const id=req.params.id;
+    const editenquiry=await Enquiry.findByIdAndUpdate(id,req.body)
+    if(editenquiry){
+        res.status(200).json({
+            message:"Reply Send"
+        })
+    }else{
+        res.status(400).json({
+            message:"Try-again"
+        })
+    }
+})
+
+
+myserver.patch("/editproducts/:id",async(req,res)=>{
+    const id=req.params.id;
+    const editproducts=await Products.findByIdAndUpdate(id,req.body)
+    if(editproducts){
+        res.status(200).json({
+            message:"Product Data Edited"
+        })
+    }else{
+        res.status(400).json({
+            message:"Try-again"
+        })
+    }
+})
+
+myserver.patch("/editadmin/:id",async(req,res)=>{
+    const id=req.params.id;
+    const editadmin=await Admin.findByIdAndUpdate(id,req.body)
+    if(editadmin){
+        res.status(200).json({
+            message:"Data edited successfully"
+        })
+    }else{
+        res.status(400).json({
+            message:"Try-again"
+        })
+    }
+})
+
+myserver.patch("/editprofile/:id",async(req,res)=>{
+    const id=req.params.id;
+    const editprofile=await Login.findByIdAndUpdate(id,req.body)
+    if(editprofile){
+        res.status(200).json({
+            message:"Profile edited successfully"
+        })
+    }else{
+        res.status(400).json({
+            message:"Try-again"
+        })
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 myserver.listen(port,()=>{
     console.log("server started")
 })

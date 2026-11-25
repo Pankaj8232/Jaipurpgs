@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useForm } from "react-hook-form";
@@ -28,15 +29,13 @@ function Adminlogindata() {
     formState: { errors: editerrors },
   } = useForm();
 
-  
-async function Getdata() {
+  async function Getdata() {
     let apilink = await fetch("http://localhost:5000/admindata");
     let result = await apilink.json();
 
     console.log(result);
     fulldata(result);
-}
-
+  }
 
   useEffect(() => {
     Getdata();
@@ -96,7 +95,7 @@ async function Getdata() {
 
   async function Deleteuser(id) {
     let selecteduser = data.find(function (user) {
-      return user.id === id;
+      return user._id === id;
     });
 
     if (!selecteduser) {
@@ -106,9 +105,12 @@ async function Getdata() {
     } else {
       if (window.confirm("Are you sure to delete?")) {
         try {
-          let apilink = await fetch(`http://localhost:3000/admindata/${id}`, {
-            method: "DELETE",
-          });
+          let apilink = await fetch(
+            `http://localhost:5000/deleteadmin/${id}`,
+            {
+              method: "DELETE",
+            }
+          );
 
           if (apilink.ok) {
             toast.success("Sub-admin deleted successfully");
@@ -125,7 +127,7 @@ async function Getdata() {
   }
 
   function Openpopup(e) {
-    setid(e.id);
+    setid(e._id);
 
     editreset({
       editname: e.name,
@@ -155,13 +157,16 @@ async function Getdata() {
         role: formdata.editrole,
       };
 
-      let apilink = await fetch(`http://localhost:3000/admindata/${id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedata),
-      });
+      let apilink = await fetch(
+        `http://localhost:5000/editadmin/${id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedata),
+        }
+      );
 
       if (apilink.ok) {
         toast.success("Admin updated successfully");
@@ -181,7 +186,10 @@ async function Getdata() {
 
       <h1>Add Sub-Admin</h1>
 
-      <form className="adminlogindata" onSubmit={handleSubmit(Adminlogincheck)}>
+      <form
+        className="adminlogindata"
+        onSubmit={handleSubmit(Adminlogincheck)}
+      >
         <input
           type="text"
           placeholder="Enter Your Name"
@@ -317,14 +325,17 @@ async function Getdata() {
                 <td>
                   <button
                     className="deletedatabutton"
-                    onClick={() => Deleteuser(e.id)}
+                    onClick={() => Deleteuser(e._id)}
                   >
                     Delete
                   </button>
                 </td>
 
                 <td>
-                  <button className="edtibutton" onClick={() => Openpopup(e)}>
+                  <button
+                    className="edtibutton"
+                    onClick={() => Openpopup(e)}
+                  >
                     Edit
                   </button>
                 </td>
@@ -360,7 +371,9 @@ async function Getdata() {
                 },
               })}
             />
-            <p className="adminpasswordalert">{editerrors.editname?.message}</p>
+            <p className="adminpasswordalert">
+              {editerrors.editname?.message}
+            </p>
 
             <input
               type="email"
@@ -393,7 +406,9 @@ async function Getdata() {
               <option value="admin">Main Admin</option>
               <option value="subadmin">Sub Admin</option>
             </select>
-            <p className="adminpasswordalert">{editerrors.editrole?.message}</p>
+            <p className="adminpasswordalert">
+              {editerrors.editrole?.message}
+            </p>
 
             <input
               type="text"
@@ -439,7 +454,9 @@ async function Getdata() {
                 },
               })}
             />
-            <p className="adminpasswordalert">{editerrors.editcity?.message}</p>
+            <p className="adminpasswordalert">
+              {editerrors.editcity?.message}
+            </p>
 
             <input
               type="text"

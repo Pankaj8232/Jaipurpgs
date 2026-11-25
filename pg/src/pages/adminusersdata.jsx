@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useForm } from "react-hook-form";
@@ -12,8 +13,6 @@ function Adminusersdata() {
   const [eye2, seteye2] = useState("fas fa-eye-slash");
   const [passwordtype2, setpasswordtype2] = useState("password");
 
-  const [dodelete, userdelete] = useState([]);
-
   const {
     register,
     handleSubmit,
@@ -24,12 +23,6 @@ function Adminusersdata() {
 
   const password = watch("password");
 
-  async function Getdeleteuser() {
-    let apilink = await fetch("http://localhost:5000/login");
-    let data = await apilink.json();
-    userdelete(data);
-  }
-
   async function Usersinformation() {
     let apilink = await fetch("http://localhost:5000/login");
     let result = await apilink.json();
@@ -37,7 +30,6 @@ function Adminusersdata() {
   }
 
   useEffect(() => {
-    Getdeleteuser();
     Usersinformation();
   }, []);
 
@@ -67,14 +59,17 @@ function Adminusersdata() {
     } else {
       if (window.confirm("Are you sure to delete?")) {
         try {
-          let apilink = await fetch(`http://localhost:5000/login/${id}`, {
-            method: "DELETE",
-          });
+          let apilink = await fetch(
+            `http://localhost:5000/deletelogin/${id}`,
+            {
+              method: "DELETE",
+            }
+          );
 
           if (apilink.ok) {
             toast.success("User deleted successfully");
             Usersinformation();
-            Getdeleteuser();
+            setshowresults(false);
           } else {
             toast.error("User not deleted");
           }
@@ -128,7 +123,6 @@ function Adminusersdata() {
 
         openpopup(false);
         Usersinformation();
-        Getdeleteuser();
       } else {
         toast.error("Registration failed");
       }
@@ -154,9 +148,13 @@ function Adminusersdata() {
       <Toaster />
 
       <div className="searchinputdiv">
-        <button className="addnewuserbutton" onClick={() => openpopup(true)}>
+        <button
+          className="addnewuserbutton"
+          onClick={() => openpopup(true)}
+        >
           Add new user
         </button>
+
         <input
           type="text"
           placeholder="Search User here"
@@ -169,23 +167,23 @@ function Adminusersdata() {
           <div className="adminsearchresults">
             {data
               .filter((ele) =>
-                ele.name.toLowerCase().includes(search.toLowerCase()),
+                ele.name.toLowerCase().includes(search.toLowerCase())
               )
               .map((ele) => (
                 <div
                   className="adminsearchresult"
-                  key={ele.id}
+                  key={ele._id}
                   onClick={() => {
                     setsearch(ele.name);
                     Showresult();
                   }}
                 >
-                  <p> {ele.name}</p>
+                  <p>{ele.name}</p>
                 </div>
               ))}
 
             {data.filter((ele) =>
-              ele.name.toLowerCase().includes(search.toLowerCase()),
+              ele.name.toLowerCase().includes(search.toLowerCase())
             ).length === 0 && <p>User not exist</p>}
           </div>
         )}
@@ -193,12 +191,17 @@ function Adminusersdata() {
 
       {showresults && (
         <div className="searcheduserdiv">
-          <i onClick={Closeshowresult} className="fas fa-times-circle"></i>
+          <i
+            onClick={Closeshowresult}
+            className="fas fa-times-circle"
+          ></i>
 
           {data
-            .filter((ele) => ele.name.toLowerCase() === search.toLowerCase())
+            .filter((ele) =>
+              ele.name.toLowerCase() === search.toLowerCase()
+            )
             .map((ele) => (
-              <div className="searcheduser" key={ele.id}>
+              <div className="searcheduser" key={ele._id}>
                 <p>Name: {ele.name}</p>
                 <p>Email: {ele.email}</p>
                 <p>Password: {ele.password}</p>
@@ -208,7 +211,7 @@ function Adminusersdata() {
 
                 <button
                   className="deletedatabutton"
-                  onClick={() => Deleteuser(ele.id)}
+                  onClick={() => Deleteuser(ele._id)}
                 >
                   Delete User
                 </button>
@@ -218,7 +221,10 @@ function Adminusersdata() {
       )}
 
       {popup && (
-        <form className="registerform" onSubmit={handleSubmit(Register)}>
+        <form
+          className="registerform"
+          onSubmit={handleSubmit(Register)}
+        >
           <i
             id="closepopup"
             className="fas fa-times-circle"
@@ -299,7 +305,9 @@ function Adminusersdata() {
       <div>
         <h2 className="usersdataheading">Users data</h2>
 
-        <span className="totalusers">total users = {data.length}</span>
+        <span className="totalusers">
+          total users = {data.length}
+        </span>
 
         <table className="usersdatatable">
           <thead>
@@ -316,7 +324,7 @@ function Adminusersdata() {
 
           <tbody>
             {data.map((ele) => (
-              <tr key={ele.id}>
+              <tr key={ele._id}>
                 <td>{ele.name}</td>
                 <td>{ele.email}</td>
                 <td>{ele.password}</td>
@@ -326,7 +334,7 @@ function Adminusersdata() {
                 <td>
                   <button
                     className="deletedatabutton"
-                    onClick={() => Deleteuser(ele.id)}
+                    onClick={() => Deleteuser(ele._id)}
                   >
                     Delete User
                   </button>

@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -24,23 +25,25 @@ function Adminenquiry() {
 
   async function Deleteenquiry(id) {
     if (window.confirm("Are you sure to delete Enquiry")) {
-      let apilink = await fetch(`http://localhost:3000/enquiry/${id}`, {
-        method: "DELETE",
-      });
+      let apilink = await fetch(
+        `http://localhost:5000/enquiryproducts/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
 
       if (apilink.ok) {
         toast.success("Enquiry deleted successfully");
         Getdata();
-
-        if (selecteddata.id === id) {
-          setshowdetails(false);
-        }
+        setshowdetails(false);
+      } else {
+        toast.error("Enquiry not deleted");
       }
     }
   }
 
   function Openpopup(enquiry) {
-    setselectedEnquiry(enquiry.id);
+    setselectedEnquiry(enquiry._id);
     setreply("");
     openpopup(true);
   }
@@ -50,14 +53,14 @@ function Adminenquiry() {
       let data = { reply: reply };
 
       let apilink = await fetch(
-        `http://localhost:3000/enquiry/${selectedEnquiry}`,
+        `http://localhost:5000/editenquiry/${selectedEnquiry}`,
         {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(data),
-        },
+        }
       );
 
       if (apilink.ok) {
@@ -65,6 +68,8 @@ function Adminenquiry() {
         openpopup(false);
         setreply("");
         Getdata();
+      } else {
+        toast.error("Reply not saved");
       }
     } else {
       toast.error("Please enter a reply");
@@ -72,7 +77,7 @@ function Adminenquiry() {
   }
 
   const filtereddata = data.filter((ele) =>
-    ele.name.toLowerCase().includes(search.toLowerCase()),
+    ele.name.toLowerCase().includes(search.toLowerCase())
   );
 
   function Showdetails(ele) {
@@ -104,7 +109,7 @@ function Adminenquiry() {
                   filtereddata.map((ele) => (
                     <div
                       className="adminenquirysearchresult"
-                      key={ele.id}
+                      key={ele._id}
                       onClick={() => Showdetails(ele)}
                     >
                       <p>{ele.name}</p>
@@ -131,16 +136,17 @@ function Adminenquiry() {
             <p>Name: {selecteddata.name}</p>
             <p>Email: {selecteddata.email}</p>
             <p>Message: {selecteddata.message}</p>
+
             <button
               className="deleteenquiry"
-              onClick={(enquiry) => Deleteenquiry(enquiry.id)}
+              onClick={() => Deleteenquiry(selecteddata._id)}
             >
               Delete
             </button>
 
             <button
               className="replyenquiry"
-              onClick={(enquiry) => Openpopup(enquiry)}
+              onClick={() => Openpopup(selecteddata)}
             >
               Reply
             </button>
@@ -161,19 +167,21 @@ function Adminenquiry() {
           <tbody>
             {data.map(function (enquiry) {
               return (
-                <tr key={enquiry.id}>
+                <tr key={enquiry._id}>
                   <td>{enquiry.name}</td>
                   <td>{enquiry.email}</td>
                   <td>{enquiry.message}</td>
 
                   <td>
-                    <button onClick={() => Deleteenquiry(enquiry.id)}>
+                    <button onClick={() => Deleteenquiry(enquiry._id)}>
                       Delete
                     </button>
                   </td>
 
                   <td>
-                    <button onClick={() => Openpopup(enquiry)}>Reply</button>
+                    <button onClick={() => Openpopup(enquiry)}>
+                      Reply
+                    </button>
                   </td>
                 </tr>
               );
