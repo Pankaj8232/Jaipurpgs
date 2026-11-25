@@ -268,6 +268,7 @@ myserver.patch("/editadmin/:id",async(req,res)=>{
     }
 })
 
+
 myserver.patch("/editprofile/:id",async(req,res)=>{
     const id=req.params.id;
     const editprofile=await Login.findByIdAndUpdate(id,req.body)
@@ -281,6 +282,7 @@ myserver.patch("/editprofile/:id",async(req,res)=>{
         })
     }
 })
+
 
 
 

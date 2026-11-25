@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
@@ -20,21 +21,18 @@ function Profile() {
   const [editcity, seteditcity] = useState("");
   const [editimage, seteditimage] = useState("");
 
-  async function getuser() {
+  function getuser() {
     let loggeduser = JSON.parse(localStorage.getItem("loggedinuser"));
 
     if (!loggeduser) {
       return;
     }
 
-    let apilink = await fetch("http://localhost:5000/login");
-    let data = await apilink.json();
+    setuser(loggeduser);
+    setid(loggeduser._id);
 
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].email === loggeduser.email) {
-        setuser(data[i]);
-      }
-    }
+    console.log("USER DATA:", loggeduser);
+    console.log("USER ID:", loggeduser._id);
   }
 
   useEffect(() => {
@@ -82,19 +80,27 @@ function Profile() {
   }
 
   function Openeditpopup() {
-    setid(user.id);
-    seteditname(user.name);
-    seteditemail(user.email);
-    seteditpincode(user.pincode);
-    seteditstate(user.state);
-    seteditcity(user.city);
-    seteditimage(user.image);
+    setid(user._id);
+
+    console.log("EDIT ID:", user._id);
+
+    seteditname(user.name || "");
+    seteditemail(user.email || "");
+    seteditpincode(String(user.pincode || ""));
+    seteditstate(user.state || "");
+    seteditcity(user.city || "");
+    seteditimage(user.image || "");
 
     openeditform(true);
   }
 
   async function Editdata(e) {
     e.preventDefault();
+
+    if (!id) {
+      toast.error("User ID not found");
+      return;
+    }
 
     if (editname.length < 3) {
       toast.error("Please enter valid name");
@@ -125,14 +131,19 @@ function Profile() {
       });
 
       if (apilink.ok) {
-        let updateduser = await apilink.json();
-
-        toast.success("Profile updated successfully");
+        let updateduser = {
+          ...user,
+          ...data,
+          _id: id,
+        };
 
         setuser(updateduser);
-        openeditform(false);
+        setid(id);
 
         localStorage.setItem("loggedinuser", JSON.stringify(updateduser));
+
+        toast.success("Profile updated successfully");
+        openeditform(false);
       } else {
         toast.error("Profile not updated");
       }
@@ -297,8 +308,6 @@ function Profile() {
                 value={editstate}
                 onChange={(e) => seteditstate(e.target.value)}
               />
-
-          
 
               <input
                 type="text"
