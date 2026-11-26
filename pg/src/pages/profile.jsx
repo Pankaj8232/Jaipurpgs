@@ -122,7 +122,7 @@ function Profile() {
         image: editimage,
       };
 
-      let apilink = await fetch(`https://pgbackend-umber.vercel.app//editprofile/${id}`, {
+      let apilink = await fetch(`https://pgbackend-umber.vercel.app/editprofile/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
