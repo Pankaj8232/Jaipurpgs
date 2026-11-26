@@ -43,7 +43,7 @@ function Registeruser() {
 
   async function Register(formdata) {
     try {
-      const checkuser = await fetch("https://pgbackend-umber.vercel.app//login");
+      const checkuser = await fetch("https://pgbackend-umber.vercel.app/login");
 
       if (!checkuser.ok) {
         toast.error("Unable to check existing users");
@@ -67,7 +67,7 @@ function Registeruser() {
         password: formdata.password,
       };
 
-      const apilink = await fetch("https://pgbackend-umber.vercel.app//addlogin", {
+      const apilink = await fetch("https://pgbackend-umber.vercel.app/addlogin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
