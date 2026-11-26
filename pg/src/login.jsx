@@ -27,7 +27,7 @@ function LoginForm() {
 
   async function Submit(formdata) {
     try {
-      let apilink = await fetch("https://pgbackend-umber.vercel.app//login");
+      let apilink = await fetch("https://pgbackend-umber.vercel.app/login");
 
       if (!apilink.ok) {
         toast.error("Unable to connect to server");
