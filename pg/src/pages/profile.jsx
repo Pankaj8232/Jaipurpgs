@@ -68,7 +68,7 @@ function Profile() {
       return;
     }
 
-    let apilink = await fetch("http://localhost:5000/enquiry");
+    let apilink = await fetch("https://pgbackend-umber.vercel.app//enquiry");
     let data = await apilink.json();
 
     let result = data.filter(function (enquiry) {
@@ -122,7 +122,7 @@ function Profile() {
         image: editimage,
       };
 
-      let apilink = await fetch(`http://localhost:5000/editprofile/${id}`, {
+      let apilink = await fetch(`https://pgbackend-umber.vercel.app//editprofile/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

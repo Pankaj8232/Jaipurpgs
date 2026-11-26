@@ -15,7 +15,7 @@ function Qrcodecart() {
   const [utralert, setutralert] = useState("");
 
   async function Postutr() {
-    const apilink = await fetch("http://localhost:5000/booking", {
+    const apilink = await fetch("https://pgbackend-umber.vercel.app//addbooking", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -42,7 +42,7 @@ async function Bookpg() {
     const bookingids = [];
 
     for (let item of items) {
-      const response = await fetch("http://localhost:5000/booking", {
+      const response = await fetch("https://pgbackend-umber.vercel.app//booking", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

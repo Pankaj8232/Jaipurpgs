@@ -24,7 +24,7 @@ function Adminusersdata() {
   const password = watch("password");
 
   async function Usersinformation() {
-    let apilink = await fetch("http://localhost:5000/login");
+    let apilink = await fetch("https://pgbackend-umber.vercel.app//login");
     let result = await apilink.json();
     usersdata(result);
   }
@@ -60,7 +60,7 @@ function Adminusersdata() {
       if (window.confirm("Are you sure to delete?")) {
         try {
           let apilink = await fetch(
-            `http://localhost:5000/deletelogin/${id}`,
+            `https://pgbackend-umber.vercel.app//deletelogin/${id}`,
             {
               method: "DELETE",
             }
@@ -82,7 +82,7 @@ function Adminusersdata() {
 
   async function Register(formdata) {
     try {
-      let checkuser = await fetch("http://localhost:5000/login");
+      let checkuser = await fetch("https://pgbackend-umber.vercel.app//login");
       let users = await checkuser.json();
 
       let userexists = users.find(function (user) {
@@ -104,7 +104,7 @@ function Adminusersdata() {
         pincode: formdata.pincode,
       };
 
-      let apilink = await fetch("http://localhost:5000/login", {
+      let apilink = await fetch("https://pgbackend-umber.vercel.app/addlogin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

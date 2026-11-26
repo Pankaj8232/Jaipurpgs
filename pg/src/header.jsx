@@ -16,7 +16,7 @@ function Header() {
   const [data, getdata] = useState([]);
 
   async function Getdata() {
-    let apilink = await fetch("http://localhost:5000/products");
+    let apilink = await fetch("https://pgbackend-umber.vercel.app//products");
     let result = await apilink.json();
     getdata(result);
   }

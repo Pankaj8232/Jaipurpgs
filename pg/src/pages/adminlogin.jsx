@@ -19,7 +19,7 @@ function Adminlogin() {
   const [getdata, checkdata] = useState([]);
 
   async function Getdata() {
-    let apilink = await fetch("http://localhost:5000/admindata");
+    let apilink = await fetch("https://pgbackend-umber.vercel.app//admindata");
     let data = await apilink.json();
     checkdata(data);
   }
