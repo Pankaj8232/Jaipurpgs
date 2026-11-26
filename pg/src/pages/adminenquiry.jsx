@@ -14,7 +14,7 @@ function Adminenquiry() {
   const [selecteddata, setselecteddata] = useState({});
 
   async function Getdata() {
-    let apilink = await fetch("https://pgbackend-umber.vercel.app//enquiry");
+    let apilink = await fetch("https://pgbackend-umber.vercel.app/enquiry");
     let data = await apilink.json();
     getdata(data);
   }
@@ -26,7 +26,7 @@ function Adminenquiry() {
   async function Deleteenquiry(id) {
     if (window.confirm("Are you sure to delete Enquiry")) {
       let apilink = await fetch(
-        `https://pgbackend-umber.vercel.app//enquiryproducts/${id}`,
+        `https://pgbackend-umber.vercel.app/enquiryproducts/${id}`,
         {
           method: "DELETE",
         }
@@ -53,7 +53,7 @@ function Adminenquiry() {
       let data = { reply: reply };
 
       let apilink = await fetch(
-        `https://pgbackend-umber.vercel.app//editenquiry/${selectedEnquiry}`,
+        `https://pgbackend-umber.vercel.app/editenquiry/${selectedEnquiry}`,
         {
           method: "PATCH",
           headers: {

@@ -49,7 +49,7 @@ function Profile() {
       return;
     }
 
-    let apilink = await fetch("http://localhost:5000/booking");
+    let apilink = await fetch("https://pgbackend-umber.vercel.app/booking");
     let data = await apilink.json();
 
     let userbookings = data.filter(function (booking) {
@@ -68,7 +68,7 @@ function Profile() {
       return;
     }
 
-    let apilink = await fetch("https://pgbackend-umber.vercel.app//enquiry");
+    let apilink = await fetch("https://pgbackend-umber.vercel.app/enquiry");
     let data = await apilink.json();
 
     let result = data.filter(function (enquiry) {

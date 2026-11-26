@@ -15,7 +15,7 @@ function Aboutprodcutdetail() {
 
 
 async function Getapi() {
-    let apilink = await fetch("https://pgbackend-umber.vercel.app//products");
+    let apilink = await fetch("https://pgbackend-umber.vercel.app/products");
     let result = await apilink.json();
 
     let product = result.find((ele) => ele.slug === slug);

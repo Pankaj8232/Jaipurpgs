@@ -18,7 +18,7 @@ async function Postenquiry(data) {
 
     if (login === "yes") {
 
-        let apilink = await fetch("https://pgbackend-umber.vercel.app//addenquiry", {
+        let apilink = await fetch("https://pgbackend-umber.vercel.app/addenquiry", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

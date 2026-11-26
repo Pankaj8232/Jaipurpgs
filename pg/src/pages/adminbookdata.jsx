@@ -7,13 +7,13 @@ function Adminbookdata() {
   const [popup, openpopup] = useState(null);
 
   async function Getdata() {
-    let apilink = await fetch("https://pgbackend-umber.vercel.app//booking");
+    let apilink = await fetch("https://pgbackend-umber.vercel.app/booking");
     let data = await apilink.json();
     getbookdata(data);
   }
 
   async function Getuserdata() {
-    let apilink = await fetch("https://pgbackend-umber.vercel.app//login");
+    let apilink = await fetch("https://pgbackend-umber.vercel.app/login");
     let data = await apilink.json();
     usersdata(data);
   }

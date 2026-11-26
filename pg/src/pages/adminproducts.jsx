@@ -35,13 +35,13 @@ function Adminproducts() {
   const [selectedproduct, setselectedproduct] = useState({});
 
   async function Getapi() {
-    let apilink = await fetch("https://pgbackend-umber.vercel.app//products");
+    let apilink = await fetch("https://pgbackend-umber.vercel.app/products");
     let data = await apilink.json();
     allproducts(data);
   }
 
   async function Getdeleteproduct() {
-    let apilink = await fetch("https://pgbackend-umber.vercel.app//products");
+    let apilink = await fetch("https://pgbackend-umber.vercel.app/products");
     let data = await apilink.json();
     setdeleteproducts(data);
   }
@@ -53,7 +53,7 @@ function Adminproducts() {
       let confirmdelete = window.confirm("Are you sure to delete?");
 
       if (confirmdelete) {
-        let apilink = await fetch(`https://pgbackend-umber.vercel.app//Deleteproducts/${id}`, {
+        let apilink = await fetch(`https://pgbackend-umber.vercel.app/Deleteproducts/${id}`, {
           method: "DELETE",
         });
 
@@ -119,7 +119,7 @@ function Adminproducts() {
         more: more,
       };
 
-      const apilink = await fetch("https://pgbackend-umber.vercel.app//addproducts", {
+      const apilink = await fetch("https://pgbackend-umber.vercel.app/addproducts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -205,7 +205,7 @@ function Adminproducts() {
         more: editmore,
       };
 
-      const apilink = await fetch(`https://pgbackend-umber.vercel.app//editproducts/${id}`, {
+      const apilink = await fetch(`https://pgbackend-umber.vercel.app/editproducts/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

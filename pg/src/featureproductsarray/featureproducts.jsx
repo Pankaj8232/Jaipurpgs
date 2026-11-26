@@ -5,7 +5,7 @@ function Featurearray() {
   const [products, allproducts] = useState([]);
 
   async function Getapi() {
-    let apilink = await fetch("http://localhost:5000/products");
+    let apilink = await fetch("https://pgbackend-umber.vercel.app/products");
     let data = await apilink.json();
     allproducts(data);
   }

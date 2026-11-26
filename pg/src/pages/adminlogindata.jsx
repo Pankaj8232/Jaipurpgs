@@ -30,7 +30,7 @@ function Adminlogindata() {
   } = useForm();
 
   async function Getdata() {
-    let apilink = await fetch("https://pgbackend-umber.vercel.app//admindata");
+    let apilink = await fetch("https://pgbackend-umber.vercel.app/admindata");
     let result = await apilink.json();
 
     console.log(result);
@@ -73,7 +73,7 @@ function Adminlogindata() {
         role: formdata.role,
       };
 
-      let apilink = await fetch("https://pgbackend-umber.vercel.app//addadmindata", {
+      let apilink = await fetch("https://pgbackend-umber.vercel.app/addadmindata", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -106,7 +106,7 @@ function Adminlogindata() {
       if (window.confirm("Are you sure to delete?")) {
         try {
           let apilink = await fetch(
-            `https://pgbackend-umber.vercel.app//deleteadmin/${id}`,
+            `https://pgbackend-umber.vercel.app/deleteadmin/${id}`,
             {
               method: "DELETE",
             }
@@ -158,7 +158,7 @@ function Adminlogindata() {
       };
 
       let apilink = await fetch(
-        `https://pgbackend-umber.vercel.app//editadmin/${id}`,
+        `https://pgbackend-umber.vercel.app/editadmin/${id}`,
         {
           method: "PATCH",
           headers: {
