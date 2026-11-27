@@ -13,23 +13,28 @@ function Aboutprodcutdetail() {
   const [data, setdata] = useState(null);
   const [loading, setloading] = useState(true);
 
+  async function Getapi() {
+    try {
+      let apilink = await fetch("https://pgbackend-umber.vercel.app/products");
+      let result = await apilink.json();
 
-async function Getapi() {
-    let apilink = await fetch("https://pgbackend-umber.vercel.app/products");
-    let result = await apilink.json();
+      let product = result.find((ele) => ele.slug === slug);
 
-    let product = result.find((ele) => ele.slug === slug);
-
-    if (product) {
+      if (product) {
         product.id = product._id;
+      }
+
+      setdata(product || null);
+    } catch (error) {
+      console.log(error);
+      setdata(null);
+    } finally {
+      setloading(false);
     }
-
-    setdata(product);
-    setloading(false);
-}
-
+  }
 
   useEffect(() => {
+    setloading(true);
     Getapi();
   }, [slug]);
 
@@ -46,7 +51,23 @@ async function Getapi() {
   }
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    return (
+      <div className="pgloader">
+        <div className="pgloadercontent">
+          <div className="pgloaderanimation">
+            <div className="loadercircle"></div>
+            <i className="fas fa-house"></i>
+          </div>
+
+          <h2>Finding Your Perfect PG</h2>
+          <p>Please wait while we load the details...</p>
+
+          <div className="loaderprogress">
+            <div className="loaderprogressbar"></div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   if (!data) {
@@ -66,6 +87,7 @@ async function Getapi() {
               <div className="smallimage1">
                 <img src={data.smallimage1} alt="" />
               </div>
+
               <div className="smallimage2">
                 <img src={data.smallimage2} alt="" />
               </div>
@@ -105,12 +127,6 @@ async function Getapi() {
             </div>
 
             <div className="aboutbookingbox">
-              {/* <Aboutbookseats available={data.available} /> */}
-
-              {/* <Bookaboutproducts
-                productname={data.name}
-              /> */}
-
               {inCart(data.id) ? (
                 <Link to="/cart">Go to cart</Link>
               ) : (
