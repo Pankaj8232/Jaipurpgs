@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Header } from "../header";
@@ -8,11 +9,13 @@ function Locationproducts() {
   const { slug } = useParams();
 
   const [data, getdata] = useState([]);
+  const [loading, setloading] = useState(true);
 
   async function Getdata() {
     let apilink = await fetch("https://pgbackend-umber.vercel.app/products");
     let result = await apilink.json();
     getdata(result);
+    setloading(false);
   }
 
   useEffect(() => {
@@ -22,6 +25,26 @@ function Locationproducts() {
   const products = data.filter((item) =>
     item.location?.toLowerCase().startsWith(slug?.toLowerCase() || "")
   );
+
+  if (loading) {
+    return (
+      <div className="pgloader">
+        <div className="pgloadercontent">
+          <div className="pgloaderanimation">
+            <div className="loadercircle"></div>
+            <i className="fas fa-house"></i>
+          </div>
+
+          <h2>Finding Perfect PG</h2>
+          <p>Please wait while we load the details...</p>
+
+          <div className="loaderprogress">
+            <div className="loaderprogressbar"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
